@@ -1,3 +1,23 @@
+/*
+  COLOURS
+
+  background: #black
+  primary button: #da96df
+  
+
+
+*/
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
 .background {
   padding: 100px;
   position: absolute;
@@ -5,7 +25,7 @@
   left: 0px;
   width: calc(100vw - 200px);
   height: calc(100vh - 200px);
-  background: linear-gradient(150deg, #d9dbe2, #808aac 100%, #282d39 0);
+  background: linear-gradient(150deg, #ffffff, #da96df 100%, #282d39 0);
 }
 
 .auth-container {
@@ -14,8 +34,8 @@
   position: relative;
   top: calc(50vh - 144px - 100px);
   left: calc(50vw - 240px - 100px);
-  background-color: #4a5162;
-  border-radius: 24px;
+  background-color: #000000;
+  border-radius: 8px;
   box-shadow: 0 2px 15px rgb(0 0 0 / 68%);
 }
 
@@ -23,25 +43,42 @@
   padding-top: 33px;
   width: 60%;
   margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .auth-title {
   padding-bottom: 20px;
   width: 100%;
   text-align: center;
-  color: white;
-  font-size: 26px;
+  background: linear-gradient(90deg, #da96df 0%, #ffffff 50%, #da96df 100%);
+  animation: background-pan 3s linear infinite;
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.input-container {
+  width: 100%;
 }
 
 .text-input {
-  width: 100%;
+  width: 94%;
   padding: 8px;
+  padding-right: 8px;
   margin-bottom: 24px;
-  background-color: #4a5162;
+  background-color: #414141;
   outline: none;
   border-width: 0px;
-  border-bottom: 2px solid #726dfe;
+  border-bottom: 2px solid #ffffff;
   color: white;
+  border-radius: 5px;
+  place-self: center;
 }
 
 .text-input::placeholder {
@@ -49,16 +86,17 @@
 }
 
 .submit-button {
-  width: 100%;
+  width: 75%;
   padding: 14px;
   border-radius: 4px;
   border-width: 0px;
   cursor: pointer;
-  background-color: #726dfe;
-  color: white;
+  background-color: #da96df;
+  color: black;
   outline: none;
+  transition: background-color 0.75s ease;
 }
 
-.submit-button::hover {
-  background-color: #938ffe;
+.submit-button:hover {
+  background-color: #a16893;
 }
